@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+/* Todos os elementos terão essas atribuiçãos */
+*,
+*::before, 
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+/* --------------------------------------- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* MENU */
+
+.logo {
+    width: 100px;
+}
+
+.header {
+    position: absolute;
+    z-index: 999;
+    padding: 0.9rem 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* background: blue; tire para ver como está na página */
+}
+
+.header nav {
+    /* background: red; tire para ver como está na página */
+    max-width: 1400px; /* fixar um tamanho limitante para tamanho de telas maiores */
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.83rem;
+}
+
+.search a{
+    font-size: 1.05rem;
+    padding: 0 3rem;
+}
+
+.hamburguer {
+    padding-left: 1.5rem;
+}
+
+.hamburguer a {
+    padding: 0;
+    width: 37px;
+    height: 37px;
+    display: flex; 
+    /* Adicionamos o display flex por causa que a tag a é display block, 
+    retire para ver o efeito do circulo, canto superior direito */
+    border-radius: 50%;
+    background-color: rgba(115,115,115, 0.7);
+
+    /* --------------------- */
+    backdrop-filter: blur(10px); 
+    /*
+    backdrop-filter: permite que você aplique efeitos gráficos, 
+    como desfoque ou mudança de cores, 
+    na área ao fundo de um elemento. 
+    */
+
+
+    /* --------------------- */
+    -webkit-backdrop-filter: blur(10px);
+    /*
+    WebKit é um motor de renderização utilizado em navegadores web para renderizar páginas. 
+    ( -webkit para o Chrome e o Safari, -moz para o Firefox, -o para o Opera, -ms para o Internet Explorer).
+
+    Por existirem muitos navegadores, e cada um com sua especificação, 
+    às vezes é necessário adicionar esses prefixos para que um estilo CSS funcione em todos.
+    */
+
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburguer .bar {
+    position: relative;
+    width: 52%;
+    height: 1px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.hamburguer .bar::before,
+.hamburguer .bar::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 60%;
+    height: 100%;
+    background: inherit;
+    border-radius: 2px;
+}
+
+.hamburguer .bar::before {
+    top: -5px;
+}
+.hamburguer .bar::after {
+    top: 5px;
+}
+
+/* Background */
+
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.parallax {
+    pointer-events: none; /* desativa os eventos com o ponteiro */
+    transform: translate(-50%, -50%);
+    transition: 0.45s cubic-bezier(.2, .49, 0.32, .99);
+}
+
+.bg-img {
+    position: absolute;
+    width: 3500px;
+    top: calc(50% - 230px);
+    left: calc(50% + 50px);
+    
+    z-index: 1;
+}
+
+.fog-7 {
+    position: absolute;
+    z-index: 2;
+    width: 2800px;
+    top: calc(50% - 50px);
+    left: calc(50% + 300px);
+    
+}
+
+.mountain-10 {
+    position: absolute;
+    z-index: 3;
+    width: 892px;
+    top: calc(50% + 325px);
+    left: calc(50%);
+    
+}
+
+.fog-6 {
+    position: absolute;
+    z-index: 4;
+    min-width: 1610px;
+    top: calc(50% + 355px);
+    left: calc(50% + 10px);
+    
+}
+
+.mountain-9 {
+    position: absolute;
+    z-index: 5;
+    width: 470px;
+    top: calc(50% + 213px);
+    left: calc(50% - 457px);
+}
+
+.mountain-8 {
+    position: absolute;
+    z-index: 6;
+    width: 810px;
+    top: calc(50% + 320px);
+    left: calc(50% - 230px);
+    
+}
+
+.fog-5 {
+    position: absolute;
+    z-index: 7;
+    width: 450px;
+    top: calc(50% + 160px);
+    left: calc(50% + 20px);
+    
+}
+
+.mountain-7 {
+    position: absolute;
+    z-index: 8;
+    width: 538px;
+    top: calc(50% + 243px);
+    left: calc(50% + 805px);
+    
+}
+
+/* Titulo */
+
+.text {
+    position: absolute;
+    z-index: 9;
+    top: calc(50% - 20px);
+    left: 50%;
+    
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    pointer-events: auto;
+}
+
+::selection {
+    background: #0a3709bb;
+}
+
+.text h2 {
+    font-weight: 100;
+    font-size: 6.5rem;
+    line-height: 0.88;
+}
+
+.text h1 {
+    font-weight: bold;
+    font-size: 8rem;
+    line-height: 0.88;
+}
+
+.mountain-6 {
+    position: absolute;
+    z-index: 10;
+    width: 408px;
+    top: calc(50% + 60px);
+    left: calc(50% + 540px);
+    
+}
+
+.fog-4 {
+    position: absolute;
+    z-index: 11;
+    width: 590px;
+    top: calc(50% + 323px);
+    left: calc(50% - 60px);
+    
+}
+
+.mountain-5 {
+    position: absolute;
+    z-index: 12;
+    width: 625px;
+    top: calc(50% + 380px);
+    left: calc(50% + 100px);
+    
+}
+
+.fog-3 {
+    position: absolute;
+    z-index: 13;
+    width: 1600px;
+    top: calc(50% + 110px);
+    left: calc(50% - 15px);
+    
+}
+
+.mountain-4 {
+    position: absolute;
+    z-index: 14;
+    width: 464px;
+    top: calc(50% + 396px);
+    left: calc(50% - 381.5px);
+    
+}
+
+.mountain-3 {
+    position: absolute;
+    z-index: 15;
+    width: 600px;
+    top: calc(50% + 196px);
+    right: calc(0% - 350px);
+    
+}
+
+.fog-2 {
+    position: absolute;
+    z-index: 16;
+    width: 1464px;
+    top: calc(50% + 296px);
+    right: calc(0% - 235px);
+    
+}
+
+.mountain-2 {
+    position: absolute;
+    z-index: 17;
+    width: 564px;
+    top: calc(50% + 296px);
+    right: calc(50% + 135px);
+    
+}
+
+.mountain-1 {
+    position: absolute;
+    z-index: 18;
+    width: 764px;
+    top: calc(50% + 296px);
+    right: calc(50% + 250px);
+    
+}
+
+.sun-rays {
+    position: absolute;
+    z-index: 19;
+    top: 0;
+    right: 0;
+    width: 595px;
+    pointer-events: none;
+} 
+
+.black-shadow{
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    pointer-events: none;
+} 
+
+.fog-1 {
+    position: absolute;
+    z-index: 21;
+    min-width: 1600px;
+    top: calc(100% - 355px);
+    right: 50%;
+    
+}
+
+.vignette {
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 65%, rgba(0,0,0, 0.7));
+    pointer-events: none;
+}
